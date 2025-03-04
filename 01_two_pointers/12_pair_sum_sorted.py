@@ -1,6 +1,9 @@
 # Given a sorted array and a target sum, return the indexes of any pair of numbers that add up to the target sum.
 # Avoid brute force with 2 nested loops O(n²) and use the two pointers technique
-# O(n) O(1)
+
+# O(n), O(1)
+
+
 def pair_sum_sorted(nums: list[int], target: int) -> list[int]:
     left = 0
     right = len(nums) - 1
