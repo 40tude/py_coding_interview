@@ -1,15 +1,19 @@
 # Given a partially completed 9x9 Sudoku board, validate it.
 
 # O(n²), O(n²)
-# Car on itère sur chaque cellule du tableau une fois et qu'on fait des opérations sur des hash sets en O(1)
-# On alloue des 3 tableaux (rows, cols, grids) de taille n (9 ici) qui sont chacun de taille n (9 ici)
+# Because we iterate over each cell of the board once and perform operations on hash sets in O(1).
+# We allocate three arrays (rows, cols, grids) of size n (9 here), each containing n (9 here) elements.
 
-# On va utiliser un hash set pour chaque ligne, colonne et carré
-# La cellule j, i appartient à la ligne j, colonne i et au carré [j // 3]  [i // 3] (i,j € [0, 8])
+# We will use a hash set for each row, column, and square.
+# ! The cell (j, i) belongs to row j, column i, and square [j // 3][i // 3] (i, j ∈ [0, 8]).
 
-# On va créer 9 hash sets pour les lignes, 9 hash sets pour les colonnes et 9 hash sets pour les carrés
-# On va itérer sur chaque cellule et ajouter la valeur à chaque hash set
-# Si on trouve une valeur déjà présente dans un hash set, on retourne False
+# We will create 9 hash sets for rows, 9 hash sets for columns, and 9 hash sets for squares.
+# We will iterate over each cell and add the value to each corresponding hash set.
+# If a value is already present in any hash set, we return False.
+
+# We'll iterate over each cell:
+# - Check if the number already exists in the respective row, column, or square.
+# - If any duplicate is found, the Sudoku board is invalid.
 
 
 def verify_sudoku_board(board: list[list[int]]) -> bool:

@@ -1,9 +1,11 @@
 # Given a string determine if it's a palindrome after removing all non-alphanumeric characters
-# On utilise 2 pointeurs (debut, fin). Il doivent être egaux. On skip les non alpha numériques.
-# On doit sur la meme lettre ou sur les 2 mêmes lettres avant que left> right
 
-# O(n), O(1)
-# Car on parcourt la chaîne de n char une fois et on alloue un nombre constant de variables
+# ! We use two pointers (start, end).
+# They must match. We skip non-alphanumeric characters.
+# We must land on the same character or two identical characters before left > right.
+
+# Time complexity: O(n), Space complexity: O(1)
+# Because we traverse the n-character string once and allocate a constant number of variables.
 
 
 def is_palindrome_valid(s: str) -> bool:

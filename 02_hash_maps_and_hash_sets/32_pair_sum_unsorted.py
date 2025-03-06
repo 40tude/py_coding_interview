@@ -1,14 +1,14 @@
-# Voir 01_two_pointers\12_pair_sum_sorted.py
+# see 01_two_pointers\12_pair_sum_sorted.py
 
 # Given an array and a target sum, return the indexes of any pair of numbers that add up to the target sum.
 # Avoid brute force with 2 nested loops O(n²) and use the two pointers technique
 # Avoir sorting the array because 0(nlogn)
 
-# complement of x = y = target - x
-# on cherche les index PAS les valeurs elles-mêmes
+# ! complement of x = y = target - x
+# look for index NOT for the values by themselves
 
-# passe 1 = on rempli uen hash map avec pour chaque valeur, son index
-# passe 2 = on cherche pour chaque valeur, si son complement est dans la hash map
+# pass 1 = fill a hash map with for each val its index
+# ! pass 2 = look for each val, if it scomplement is in the hash map
 
 
 def pair_sum_unsorted_two_pass(nums: list[int], target: int) -> list[int]:
@@ -27,9 +27,10 @@ def pair_sum_unsorted_two_pass(nums: list[int], target: int) -> list[int]:
 print(pair_sum_unsorted_two_pass([1, 2, 3, 4, 5], 6))  # [0, 4]
 
 
-# On peut faire 1 passe en remplissant la hash map et en cherchant les compléments en même temps
+# We can have only ONE pass filling the hash map and looking for the complement at the same time
 # O(n), O(n)
-# Car on itère sur la liste une seule fois et que la hash map peut croître jusqu'à avoir une taille n
+# Because go through le list only once
+# The hash map can grow up to n
 def pair_sum_unsorted_one_pass(nums: list[int], target: int) -> list[int]:
 
     complement_to_index: dict[int, int] = {}

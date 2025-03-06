@@ -2,14 +2,14 @@
 # Each representing the height of a vertical line
 # Return the amount of water which the largest container can hold
 
-# Je suis pas sûr de comprendre l'énoncé
-# On met les pointeurs au début et à la fin
-# On va à l'intérieur, on calcule la surface
-# On avance le plus petit des 2 pointeurs
-# On continue jusqu'à ce que les pointeurs se rencontrent
+# I'm not sure I understand the problem statement
+# ! We place pointers at the start and end
+# We move inward, calculating the area
+# We advance the smaller of the two pointers
+# Continue until the pointers meet
 
-# O(n), O(1)
-# Car on parcourt le tableau une fois et on alloue un nombre constant de variables
+# Time complexity: O(n), Space complexity: O(1)
+# Because we traverse the array once and allocate a constant number of variables
 
 
 def largest_container(heights: list[int]) -> int:

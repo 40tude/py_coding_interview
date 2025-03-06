@@ -2,14 +2,13 @@
 # 1 2 3 and 2 3 1 are considered duplicates
 
 # O(n²), O(n)
-# On trie le tableau => O(nlogn)
-# Pour chaque élément du tableau on appelle pair_sum_sorted_all_pairs() qui tourne en  O(n)
-# O(nlogn) + O(n²) = O(n²)
-# O(n) pour space à cause de l'algo de tri Python
-# ON NE TIENT PAS COMPTE DE L4ESPACE UTILISE POUR STOCKER LES TRIPLETS
+# We sort the array => O(nlogn)
+# For each element in the array, we call pair_sum_sorted_all_pairs(), which runs in O(n)
+# Total complexity: O(nlogn) + O(n²) = O(n²)
+# O(n) space complexity due to Python's sorting algorithm
+# ! WE DO NOT CONSIDER SPACE USED TO STORE THE TRIPLETS
 
-# Ici log c'est bien log à base 2
-# log2(128)     = 7
+# Here, log is indeed base-2 logarithm# log2(128)     = 7
 # log2(256)     = 8
 # log2(512)     = 9
 # log2(1024)    = 10

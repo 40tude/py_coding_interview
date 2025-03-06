@@ -1,37 +1,41 @@
 # Given a string of lowercase English letters
 # Rearrange the characters to form a new string representing the next immediate sequence in lexicographical (alphabetical) order.
-# If the given string is already last in lexicographical order among all possible arrangements, return the arrangement that’s first in lexicographical order
+# If the given string is already the last lexicographical arrangement possible, return the first lexicographical arrangement.
 
-# O(n), O(n)
-# Car on parcourt la chaîne de n chars 2 fois
-#       Une fois pour trouver le pivot et une fois pour trouver le rightmost successor
-#       On fait aussi une inversion de la chaîne qui est en 0(n)
-# Pour l'espace, on est en O(n) car on alloue letters[]
+# Complexity:
+# Time: O(n), Space: O(n)
+# Time is O(n) as we traverse the string a few times:
+#   - Searching for pivot
+#   - Finding rightmost successor
+#   - Reversing the suffix
+# Space complexity is O(n) due to the letters[] array allocation
 
+# ! The keyword here is "rearrange"
+# Input  : s = "abcd"
+# Output :     "abdc"
 
-# Le mot clé c'est rearrange
-# Input     : s = "abcd"
-# Output    :     "abdc"
+# Input  : s = "dcba"
+# Output :     "abcd"
 
-# Input     : s = "dcba"
-# Output    :     "abcd"
+# The best is to assign numbers to letters (a=1, b=2, c=3, etc.)
+# We look for the smallest suffix (right hand side) that we can rearrange to get a greater permutation
+# We focus on changing the smallest possible suffix that can produce a greater permutation
+# We search for the first character that is smaller than the next one (pivot)
 
-# Le mieux c'est de donner des chiffres à chaque lettre : a = 1, b = 2, c= 3...
-# l’accroissement minimal se fait en changent les lettres qui sont à droite (pas celles de gauche)
-# suffixe
-# En partant de la droite, on cherche le plus petit suffixe qu'on peut réarranger pour former une permutation plus grande
-# On cherche le premier caractère qui est plus petit que le suivant (pivot)
+# If no pivot is found, the string is already at its maximum "value".
+# Then, we return the reversed string (this will become the first lexicographical permutation).
 
-# Si on trouve pas de pivot, la chaîne est déjà à sa "valeur" max.
-# On retourne alors la chaîne inversée (se sera alors la première permutation lexicographique)
+# If a pivot is found, swap it with the next larger character to its right.
 
-# Si on a un pivot, faut l’échanger avec le premier caractère à partir de la droite qui est plus grand que lui
-# a b c e d d a où c est le pivot. On va l'échanger avec le 1er d de droite
-# a b d e d c a
+# Example:
+# Input: s = "a b c e d"
+# Pivot is 'c', as it's the first character smaller than its successor 'e':
+# Swap pivot 'c' with the next larger character to its right ('e'):
+# Result: "a b e c"
 
-# Faut voir que le suffixe edca est "non-increasing"
-# On peut minimiser le suffixe en l'inversant
-# a b d a c d e
+# Notice the suffix after the pivot is "non-increasing".
+# To minimize the suffix, reverse it:
+# Result: "a b d a c d e"
 
 
 def next_lexicographical_seq(s: str) -> str:

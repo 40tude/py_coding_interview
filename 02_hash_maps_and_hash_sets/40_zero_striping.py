@@ -1,17 +1,17 @@
-# for each 0 in an mxn matrix, set its entire row and col to 0 in place
+# For each 0 in an mxn matrix, set its entire row and col to 0 in place
 
-# Brute force => O(m x n x  (m+n))
-# Car mn = le nb de 0 si on imagine que c'est une matrice que de 0
-# m + n  = le nb de cellule dans une ligne et une colonne combinées
+# Brute force => O(m x n x (m + n))
+# Because mn represents the number of zeros if we imagine the matrix consists only of zeros.
+# m + n represents the number of cells in a row and a column combined.
 
-# Noter qu'une cellule dans une col ou une row qui contient un 0 va devenir un 0
-# On va créer 2 hash sets avec les index des lignes et des colonnes qui contiennent des 0
-# On pourra vérifier en O(1) si une cellule (j, i) appartient à une ligne ou une colonne contient un 0
+# Note that a cell in a row or column that contains a 0 will become a 0.
+# We will create two hash sets with the indexes of rows and columns that contain zeros.
+# We can then check in O(1) if a cell (j, i) belongs to a row or column that contains a 0.
 
 
 # O(mn), O(m + n)
-# En mxn car on va parcourir la matrice 2 fois et faire des opérations en 0(1) pendant chaque passe
-# En m+n car les hash sets grossissent avec le nombre de lignes et de colonnes dans lesquels on trouve des 0
+# O(mn) because we traverse the matrix twice and perform O(1) operations during each pass.
+# O(m + n) because the hash sets grow with the number of rows and columns that contain zeros.
 def zero_striping_hash_sets(matrix: list[list[int]]) -> None:
     if not matrix or not matrix[0]:
         return
@@ -44,19 +44,19 @@ print("\n".join("".join(map(str, row)) for row in board))
 print("\n\n\n")
 
 
-# Si on veut absolument faire les opération sur place, on peut remarquer qu'un ligne ou une colonne qui contient un 0 va contenir que des 0
-# Son contenu n'a pas d'importance. On peu le sacrifier
-# On décide sur la 1ere ligne de mettre à 0 les cellules dont la colonne contient un 0
-# On décide sur la 1ere colonne de mettre à 0 les cellules dont la ligne contient un 0
-# On ajoute 2 flags pour savoir si la 1ere ligne et la 1ere colonne contiennent des 0 au départ
-#       Si tel est le cas faudra mettre à 0 toute la 1ere ligne et la 1ere colonne à la fin
+# If we absolutely want to perform operations in place, we can observe that a row or column containing a 0 will end up containing only zeros.
+# Its content doesn't matter, so we can sacrifice it.
+# We decide to set to 0 the cells in the first row whose column contains a 0.
+# We decide to set to 0 the cells in the first column whose row contains a 0.
+# We add two flags to track whether the first row and the first column initially contain any zeros.
+#       If so, we will need to set the entire first row and first column to 0 at the end.
 
 # O(mn), O(1)
-# En mn car vérifier la première ligne prend O(m) et la première colonne prend O(n)
-# Ensuite y a 2 passes sur la matrice mxn
-# Enfin on itère sur la première ligne (O(m)) et la première colonne (O(n))
-# Complexité = O(m) + O(n) + O(mn) + O(m) + O(n) = O(mn)
-# En O(1) car on utilise la première ligne et la première colonne pour stocker les flags et les 0
+# O(mn) because checking the first row takes O(m) and the first column takes O(n).
+# Then, we perform two passes over the m x n matrix.
+# Finally, we iterate over the first row (O(m)) and the first column (O(n)).
+# Complexity = O(m) + O(n) + O(mn) + O(m) + O(n) = O(mn).
+# O(1) space because we use the first row and the first column to store flags and zeros.
 
 
 def zero_stripping(matrix: list[list[int]]) -> None:

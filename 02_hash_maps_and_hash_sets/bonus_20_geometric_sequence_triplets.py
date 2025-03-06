@@ -9,29 +9,28 @@
 # Input: nums = [2, 1, 2, 4, 8, 8], r = 2
 # Output: 5
 
-# On cherche x, x·r, x·r²
-# if we know one value of a triplet, we can calculate what the other two values should be
-# Faut les retrouver dans l'ordre x, x·r, x·r² dans le tableau
-# On va plutôt chercher x/r, x et xr car alors on cherche TOUJOURS x/r à gauche et xr à droite
-# Pour faire des recherche en O(1) on va utiliser des hash maps (gauche et droite)
-# Faut que x soit divisible par r
-# Comme on peut avoir plusieurs fois la même valeur dans le tableau
-# on aura sans doute le même nombre de x/r et de xr
-# Résumé
-#   Verifier x%r == 0
-#   Compter le nombre de x/r à gauche et le nombre de xr à dte
-#   On multiplie les 2 pour avoir le nombre de triplets
+# We are looking for x, x·r, x·r².
+# If we know one value of a triplet, we can calculate what the other two values should be.
+# We need to find them in order: x, x·r, x·r² in the array.
 
+# ! Instead, we search for x/r, x, and x·r because this way, we always look for x/r on the left and x·r on the right.
+# To perform O(1) lookups, we use hash maps (left and right).
+# x must be divisible by r.
+# Since the same value can appear multiple times in the array, we may find the same number of x/r and x·r.
 
-# BIEN VOIR L'EXEMPLE DE MISE EN OEUVRE p 23
-# On met tout dans le hash map de droite au départ
-# On prend le premier x à gauche du tableau
-# Gestion dynamique des hash maps gauche et droite
+# Summary:
+#   - Check if x % r == 0.
+#   - Count the occurrences of x/r on the left and x·r on the right.
+#   - Multiply these two counts to get the number of triplets.
 
+# SEE THE IMPLEMENTATION EXAMPLE ON PAGE 23
+# Initially, we store all values in the right hash map.
+# We take the first x from the left side of the array.
+# Dynamic management of the left and right hash maps.
 
 # O(n), O(n)
-# On parcourt le tableau 1 fois et on fait des operation en O(1) sur les hash map à chaque itération
-# En O(n) car la hash map peut croître jusqu'à n
+# We traverse the array once and perform O(1) operations on the hash maps at each iteration.
+# Space complexity is O(n) because the hash map can grow up to n elements.
 
 
 from collections import defaultdict

@@ -1,18 +1,17 @@
 # Given an array of integers, modify the array in place to move all zeros to the end while maintaining the relative order of non-zero elements.
 
-# On utilise 2 pointers staged
-#   - left pointe l'endroit où le valeurs non nulles doivent être placées
-#   - right point sur les valeurs non nulles
+# ! We use two staged pointers:
+#   - 'left' points to the position where non-zero values should be placed
+#   - 'right' points to non-zero values
 
-# Les 2 pointeurs à gauche
-# On met right sur la première valeur non nulle
-# On échange les valeurs
-# On avance les 2 pointeurs de +1
-# On déplace right jusqu'à la prochaine valeur non nulle et on boucle
+# Both pointers start at the left
+# Move 'right' to the first non-zero value
+# Swap values
+# Increment both pointers by +1
+# Move 'right' forward to the next non-zero value and repeat
 
-
-# O(n), O(1)
-# Car on parcourt le tableau une fois et on shift les valeurs en place
+# Time complexity: O(n), Space complexity: O(1)
+# Because we traverse the array once and shift values in place
 
 
 # def shift_zeros_to_the_end(nums: list[int]) -> None:
