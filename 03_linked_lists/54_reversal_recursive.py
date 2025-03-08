@@ -37,8 +37,16 @@ def reverse_list(head: List_Node | None) -> List_Node | None:
 
 
 if __name__ == "__main__":
-    head: List_Node | None = List_Node(1, List_Node(2, List_Node(3, List_Node(4, None))))
+
+    vals = [1, 2, 3, 4]
+    previous_node = None  # Initialize the previous_node explicitly
+    for v in reversed(vals):
+        node = List_Node(v, previous_node)
+        previous_node = node
+    head = node
+
     head = reverse_list(head)
+
     while head:
         print(head.val)
         head = head.next
