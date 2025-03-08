@@ -14,20 +14,19 @@ The problem is that with Copilot, Intellisense, code snippets, etc., a large par
 On top of that, MyPy is a real pain in this context.  
 
 Here’s what I finally do:  
-
-1. Open the excellent VSCode  
-1. Open a Jupyter Notebook  
-1. Type the code in a **Markdown** section  
+ 
+1. Open a Jupyter Notebook in VSCode 
+1. Type the code in a **Markdown** cell 
 1. Read it over, review, etc.  
-1. Once everything looks good, convert the Markdown cell into a Python cell  
-1. Run, debug, etc.  
+1. Once everything seems to look good, convert the Markdown cell into a Python cell  
+1. Run, review, debug, etc.  
 
-Finally, I don’t use any type hints anymore because, in this context, MyPy does more harm than good.  
+Finally, I don’t use type hints anymore because, in this context, MyPy does more harm than good.  
 It's better to focus on understanding the different algorithms and data structures rather than spending time bloating/complicating/slowing down the code just to help MyPy understand what's going on (and avoid it throwing insults every five lines).  
 
 Even though I firmly believe that the root issue is Python not being strictly typed. This makes me think of MyPy as a patch on a wooden leg. It does its best to warn you, you try to correct as much warnings as possible but no one really care and you have to run the code to see if works or not. 
 
-I normally use type annotations, but here, honestly… it's a real headache, and it doesn’t help tp focus on what matters.
+I normally use type annotations, but here, honestly… It's a real headache, and it doesn’t bring any value nor help to focus on what matters.
 
 ## Example (see the book p 63)
 
@@ -52,7 +51,7 @@ I normally use type annotations, but here, honestly… it's a real headache, and
 
 1. I now use `from typing import Optional` at the top of the code
 1. Note the use of strings in the class definition (`self.prev: Optional["DoublyLinkedListNode"] = None`)
-1. Do you see the `# type: ignore` comments to "Enjoy the Silence" (🎹, 1980)?
+1. Do you see the `# type: ignore` comments to get rid of the squiggles and "Enjoy the Silence" (🎹, 1980)?
 1. In the `_remove_node()` method, note the ``assert``. You then must run ``python -O script.py`` to avoid ``assert`` penalty in "release" version
 
 <div align="center">
@@ -73,11 +72,9 @@ I normally use type annotations, but here, honestly… it's a real headache, and
 ## Just to make sure...
 Don't get me wrong. I really enjoy the benefits of strong typed languages like C++ which detect 90% of the errors at compile time. 
 
-Voici ta phrase traduite en anglais US :
+The thing is, from my perspective, specifically within the context of studying the book's code, we don't have time to waste on anything other than data structures and algorithms. As I demonstrated above, using Python mode (versus Notebook) forces us to add quite a bit of extra code to satisfy MyPy, causing us to lose focus if we want to eliminate its warnings. In short, my recommendation is to work within a Jupyter Notebook.
 
-"The thing is, from my perspective, specifically within the context of studying the book's code, we don't have time to waste on anything other than data structures and algorithms. As I demonstrated above, using Python mode (versus Notebook) forces us to add quite a bit of extra code to satisfy MyPy, causing us to lose focus if we want to eliminate its warnings. In short, my recommendation is to work within a Jupyter Notebook.
-
-Below is a C++ version of the LRU Cache code above. Here, no question... Everything must be correctly typed otherwise you have no chance to go through the compile phase.  
+Below is a C++ version of the LRU Cache code above. Here, no question... Everything must be correctly typed otherwise you have no chance to go through the compile phase (and I really appreciate this kind of seat belt) 
 
 
 ```cpp
