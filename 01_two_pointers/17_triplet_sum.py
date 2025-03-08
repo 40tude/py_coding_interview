@@ -15,9 +15,9 @@
 # log2(1MB)     = 20
 
 
-#
-# Sort the array
-# b+c = -a for all values of a
+# The point :
+#     Sort the array
+#     b+c = -a for all values of a
 
 
 def pair_sum_sorted_all_pairs(nums: list[int], start: int, target: int) -> list[list[int]]:
