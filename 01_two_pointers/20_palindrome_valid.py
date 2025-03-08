@@ -1,10 +1,13 @@
 # Given a string determine if it's a palindrome after removing all non-alphanumeric characters
 
-# ! We use two pointers (start, end).
-# They must match. We skip non-alphanumeric characters.
-# We must land on the same character or two identical characters before left > right.
+# The point :
+#   ! We use two pointers (start, end).
+#   They must match. We skip non-alphanumeric characters.
+#   We must land on the same character or two identical characters before left > right.
 
-# Time complexity: O(n), Space complexity: O(1)
+# Complexity Analysis
+#   Time  : O(n)
+#   Space : O(1)
 # Because we traverse the n-character string once and allocate a constant number of variables.
 
 

@@ -2,14 +2,6 @@
 # Rearrange the characters to form a new string representing the next immediate sequence in lexicographical (alphabetical) order.
 # If the given string is already the last lexicographical arrangement possible, return the first lexicographical arrangement.
 
-# Complexity:
-# Time: O(n), Space: O(n)
-# Time is O(n) as we traverse the string a few times:
-#   - Searching for pivot
-#   - Finding rightmost successor
-#   - Reversing the suffix
-# Space complexity is O(n) due to the letters[] array allocation
-
 # ! The keyword here is "rearrange"
 # Input  : s = "abcd"
 # Output :     "abdc"
@@ -18,6 +10,8 @@
 # Output :     "abcd"
 
 # The best is to assign numbers to letters (a=1, b=2, c=3, etc.)
+
+# The point :
 # We look for the smallest suffix (right hand side) that we can rearrange to get a greater permutation
 # We focus on changing the smallest possible suffix that can produce a greater permutation
 # We search for the first character that is smaller than the next one (pivot)
@@ -36,6 +30,15 @@
 # Notice the suffix after the pivot is "non-increasing".
 # To minimize the suffix, reverse it:
 # Result: "a b d a c d e"
+
+# Complexity Analysis
+#   Time  : O(n)
+#   Space : O(n) :
+# Time is O(n) as we traverse the string a few times:
+#   - Searching for pivot
+#   - Finding rightmost successor
+#   - Reversing the suffix
+# Space complexity is O(n) due to the letters[] array allocation
 
 
 def next_lexicographical_seq(s: str) -> str:

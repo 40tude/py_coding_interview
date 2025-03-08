@@ -6,7 +6,9 @@
 #    Use 2 ptrs, one on the left the other on the right
 #    Sum them up. If below move the left ptr inward. If above move the right ptr inward
 
-# O(n), O(1)
+# Complexity Analysis
+#   Time  : O(n)
+#   Space : O(1)
 
 
 def pair_sum_sorted(nums: list[int], target: int) -> list[int]:

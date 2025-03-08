@@ -1,16 +1,19 @@
 # Given an array of integers, modify the array in place to move all zeros to the end while maintaining the relative order of non-zero elements.
 
+
+# The point :
 # ! We use two staged pointers:
 #   - 'left' points to the position where non-zero values should be placed
 #   - 'right' points to non-zero values
-
 # Both pointers start at the left
 # Move 'right' to the first non-zero value
 # Swap values
 # Increment both pointers by +1
 # Move 'right' forward to the next non-zero value and repeat
 
-# Time complexity: O(n), Space complexity: O(1)
+# Complexity Analysis
+#   Time  : O(n)
+#   Space : O(1)
 # Because we traverse the array once and shift values in place
 
 

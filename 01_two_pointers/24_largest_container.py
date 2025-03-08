@@ -3,12 +3,17 @@
 # Return the amount of water which the largest container can hold
 
 # I'm not sure I understand the problem statement
-# ! We place pointers at the start and end
-# We move inward, calculating the area
-# We advance the smaller of the two pointers
-# Continue until the pointers meet
 
-# Time complexity: O(n), Space complexity: O(1)
+# The point :
+#   ! We place pointers at the start and end
+#   We move inward, calculating the area
+#   We advance the smaller of the two pointers
+#   Continue until the pointers meet
+
+
+# Complexity Analysis
+#   Time  : O(n)
+#   Space : O(1)
 # Because we traverse the array once and allocate a constant number of variables
 
 
