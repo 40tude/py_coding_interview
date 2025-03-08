@@ -1,6 +1,11 @@
 # Given a sorted array and a target sum, return the indexes of any pair of numbers that add up to the target sum.
 # Avoid brute force with 2 nested loops O(n²) and use the two pointers technique
 
+# The point :
+#    Leverage the fact that the numbers are sorted
+#    Use 2 ptrs, one on the left the other on the right
+#    Sum them up. If below move the left ptr inward. If above move the right ptr inward
+
 # O(n), O(1)
 
 
