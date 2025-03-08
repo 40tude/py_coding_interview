@@ -4,14 +4,18 @@
 # Because mn represents the number of zeros if we imagine the matrix consists only of zeros.
 # m + n represents the number of cells in a row and a column combined.
 
-# Note that a cell in a row or column that contains a 0 will become a 0.
+# The point :
+# Note that a cell in a row or column that contains a 0 will becomes a 0.
 # We will create two hash sets with the indexes of rows and columns that contain zeros.
 # We can then check in O(1) if a cell (j, i) belongs to a row or column that contains a 0.
 
-
-# O(mn), O(m + n)
+# Complexity Analysis
+#   Time  : O(mn)
+#   Space : O(m+n) :
 # O(mn) because we traverse the matrix twice and perform O(1) operations during each pass.
 # O(m + n) because the hash sets grow with the number of rows and columns that contain zeros.
+
+
 def zero_striping_hash_sets(matrix: list[list[int]]) -> None:
     if not matrix or not matrix[0]:
         return
@@ -44,6 +48,7 @@ print("\n".join("".join(map(str, row)) for row in board))
 print("\n\n\n")
 
 
+# The point :
 # If we absolutely want to perform operations in place, we can observe that a row or column containing a 0 will end up containing only zeros.
 # Its content doesn't matter, so we can sacrifice it.
 # We decide to set to 0 the cells in the first row whose column contains a 0.
@@ -51,7 +56,9 @@ print("\n\n\n")
 # We add two flags to track whether the first row and the first column initially contain any zeros.
 #       If so, we will need to set the entire first row and first column to 0 at the end.
 
-# O(mn), O(1)
+# Complexity Analysis
+#   Time  : O(mn)
+#   Space : O(1) :
 # O(mn) because checking the first row takes O(m) and the first column takes O(n).
 # Then, we perform two passes over the m x n matrix.
 # Finally, we iterate over the first row (O(m)) and the first column (O(n)).

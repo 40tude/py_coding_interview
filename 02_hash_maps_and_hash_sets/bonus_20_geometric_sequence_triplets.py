@@ -3,7 +3,7 @@
 # 5 15 45
 
 # Given an array of integers and a common ratio r
-# find all triplets of indexes (i, j, k) that follow a geometric sequence for i < j < k.
+# Find all triplets of indexes (i, j, k) that follow a geometric sequence for i < j < k.
 # It’s possible to encounter duplicate triplets in the array.
 
 # Input: nums = [2, 1, 2, 4, 8, 8], r = 2
@@ -13,6 +13,7 @@
 # If we know one value of a triplet, we can calculate what the other two values should be.
 # We need to find them in order: x, x·r, x·r² in the array.
 
+# The point :
 # ! Instead, we search for x/r, x, and x·r because this way, we always look for x/r on the left and x·r on the right.
 # To perform O(1) lookups, we use hash maps (left and right).
 # x must be divisible by r.
@@ -28,7 +29,9 @@
 # We take the first x from the left side of the array.
 # Dynamic management of the left and right hash maps.
 
-# O(n), O(n)
+# Complexity Analysis
+#   Time  : O(n)
+#   Space : O(n) :
 # We traverse the array once and perform O(1) operations on the hash maps at each iteration.
 # Space complexity is O(n) because the hash map can grow up to n elements.
 

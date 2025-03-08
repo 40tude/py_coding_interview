@@ -4,11 +4,16 @@
 # Avoid brute force with 2 nested loops O(n²) and use the two pointers technique
 # Avoir sorting the array because 0(nlogn)
 
+# The point :
 # ! complement of x = y = target - x
 # look for index NOT for the values by themselves
 
 # pass 1 = fill a hash map with for each val its index
 # ! pass 2 = look for each val, if it scomplement is in the hash map
+
+# Complexity Analysis
+#   Time  : O(n)
+#   Space : O(n) :
 
 
 def pair_sum_unsorted_two_pass(nums: list[int], target: int) -> list[int]:

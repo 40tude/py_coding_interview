@@ -6,7 +6,9 @@
 # See p 63 for more details
 
 
-# O(1), O(n)) where n is the capacity of the cache
+# Complexity Analysis
+#   Time  : O(1)
+#   Space : O(n)
 # O(1) because put() and get() use remove_node() and add_tail() which are O(1)
 # O(n) in space complexity because we store n nodes in the cache and doubly linked list
 

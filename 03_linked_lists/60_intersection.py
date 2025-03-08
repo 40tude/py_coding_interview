@@ -7,7 +7,10 @@
 # The intersection HAS NOTHING TO DO with the values of the nodes
 # It's about the nodes themselves
 
-# O(n+m), O(1)
+
+# Complexity Analysis
+#   Time  : O(n+m)
+#   Space : O(1)
 
 from typing import Optional
 

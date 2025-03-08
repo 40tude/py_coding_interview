@@ -11,6 +11,10 @@
 
 # We assume it is acceptable to modify the linked list (here second half is reversed)
 
+# Complexity Analysis
+#   Time  : O(n)
+#   Space : O(1)
+
 from typing import Optional
 
 

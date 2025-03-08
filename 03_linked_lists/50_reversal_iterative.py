@@ -1,6 +1,9 @@
 # Reverse a linked list iteratively
 
-# O(n), O(1)
+
+# Complexity Analysis
+#   Time  : O(n)
+#   Space : O(1)
 # En complexité on est en O(n) car on parcourt la liste une seule fois
 # En espace, O(1) car l'inversion se fait en place
 

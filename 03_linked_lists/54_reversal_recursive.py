@@ -1,6 +1,8 @@
 # Reverse a linked list recursively
 
-# O(n), O(n)
+# Complexity Analysis
+#   Time  : O(n)
+#   Space : O(n)
 # En complexité on est en O(n) car on parcourt la liste une seule fois
 # En espace, O(n) car on empile les élément sur la stack du PC
 from __future__ import annotations

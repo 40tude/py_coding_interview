@@ -1,9 +1,6 @@
 # Given a partially completed 9x9 Sudoku board, validate it.
 
-# O(n²), O(n²)
-# Because we iterate over each cell of the board once and perform operations on hash sets in O(1).
-# We allocate three arrays (rows, cols, grids) of size n (9 here), each containing n (9 here) elements.
-
+# The point :
 # We will use a hash set for each row, column, and square.
 # ! The cell (j, i) belongs to row j, column i, and square [j // 3][i // 3] (i, j ∈ [0, 8]).
 
@@ -14,6 +11,12 @@
 # We'll iterate over each cell:
 # - Check if the number already exists in the respective row, column, or square.
 # - If any duplicate is found, the Sudoku board is invalid.
+
+# Complexity Analysis
+#   Time  : O(n²)
+#   Space : O(n²) :
+# Because we iterate over each cell of the board once and perform operations on hash sets in O(1).
+# We allocate three arrays (rows, cols, grids) of size n (9 here), each containing n (9 here) elements.
 
 
 def verify_sudoku_board(board: list[list[int]]) -> bool:

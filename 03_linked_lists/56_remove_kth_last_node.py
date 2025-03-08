@@ -7,8 +7,11 @@
 # Trailer is at the node before the one to remove   T.next = T.next.next
 # return Dummy.next
 
-# O(n), O(1)
-# # O(n) complexity since we traverse at most n nodes
+
+# Complexity Analysis
+#   Time  : O(n)
+#   Space : O(1)
+# O(n) complexity since we traverse at most n nodes
 # O(1) space
 
 from typing import Optional

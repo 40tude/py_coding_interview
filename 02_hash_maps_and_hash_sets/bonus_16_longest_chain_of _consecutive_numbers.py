@@ -11,13 +11,16 @@
 #   This leads to an O(n^3) solution, which is even worse.
 #   O(n^3) because there is a for loop, a while loop, and inside the while loop, we perform "while (current_num + 1) in nums" in O(n).
 
+# The point :
 # ! Optimized approach:
 # 1 - Instead of performing a linear search, we use a hash set to achieve O(1) lookups.
 # 2 - We eliminate false starts by skipping values where v-1 exists in the hash set.
 # This reduces the complexity from O(n^3) to O(n).
 
 
-# O(n), O(n)
+# Complexity Analysis
+#   Time  : O(n)
+#   Space : O(n) :
 # Even though there are two loops, the complexity is O(n) because the inner loop runs only on the start of sequences.
 # Therefore, the combined number of iterations for both loops is O(n).
 # The for loop runs n times, and the while loop runs n times.
