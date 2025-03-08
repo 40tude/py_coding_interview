@@ -4,6 +4,9 @@ My notes from the book ISBN-10: [1736049135](https://amzn.eu/d/e3MFYEf)
 <img src="./assets/book_cover.png" alt="" width="450" loading="lazy"/>
 </div>
 
+## In addition
+* Python source code on [GitHub](https://github.com/ByteByteGoHq/coding-interview-patterns/tree/main/python3)
+* 2018, List of Top [75 LeetCode Questions](https://www.teamblind.com/post/new-year-gift---curated-list-of-top-75-leetcode-questions-to-save-your-time-oam1oreu)
 
 
 ## My Recommendations  
