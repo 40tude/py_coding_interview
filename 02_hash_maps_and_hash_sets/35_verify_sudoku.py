@@ -17,9 +17,9 @@
 
 
 def verify_sudoku_board(board: list[list[int]]) -> bool:
-    row_sets = [set() for _ in range(9)]
-    col_sets = [set() for _ in range(9)]
-    grid_sets = [[set() for _ in range(3)] for _ in range(3)]
+    row_sets: list[set[int]] = [set() for _ in range(9)]
+    col_sets: list[set[int]] = [set() for _ in range(9)]
+    grid_sets: list[list[set[int]]] = [[set() for _ in range(3)] for _ in range(3)]
 
     for r in range(9):
         for c in range(9):
