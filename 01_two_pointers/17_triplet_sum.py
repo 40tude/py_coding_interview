@@ -32,6 +32,7 @@ def pair_sum_sorted_all_pairs(nums: list[int], start: int, target: int) -> list[
         if sum == target:
             pairs.append([nums[left], nums[right]])
             left += 1
+            # The list is sorted
             # To avoid duplicate, skip "b" if it is same as previous number
             while left < right and nums[left] == nums[left - 1]:
                 left += 1
@@ -49,6 +50,7 @@ def triplet_sum_(nums: list[int]) -> list[list[int]]:
         # Triplet will never sum to 0
         if nums[i] > 0:
             break
+        # The list is sorted
         # To avoid duplicate, skip "a" if it is same as previous number
         if i > 0 and nums[i] == nums[i - 1]:
             continue
