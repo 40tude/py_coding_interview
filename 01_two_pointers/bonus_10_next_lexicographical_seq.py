@@ -22,10 +22,10 @@
 # If a pivot is found, swap it with the next larger character to its right.
 
 # Example:
-# Input: s = "a b c e d"
+# Input: s = "a b c e d d a"
 # Pivot is 'c', as it's the first character smaller than its successor 'e':
-# Swap pivot 'c' with the next larger character to its right ('e'):
-# Result: "a b e c"
+# Swap pivot 'c' with the right most next larger character ('d'):
+# Result: "a b d e d c a"
 
 # Notice the suffix after the pivot is "non-increasing".
 # To minimize the suffix, reverse it:
