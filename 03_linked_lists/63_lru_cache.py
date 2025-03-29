@@ -3,7 +3,6 @@
 # LRUCache(capacity:int)
 # get (key:int)-> int
 # put (key:int, value:int) -> None
-# See p 63 for more details
 
 
 # Complexity Analysis
